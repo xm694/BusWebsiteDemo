@@ -1,0 +1,6 @@
+
+.codegpt
+analysis.ipynb
+venv/
+.env
+**/__pycache__/ 

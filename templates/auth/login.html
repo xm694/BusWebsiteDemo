@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block header %}
+  <!-- <h1>{% block title %}Home{% endblock %}</h1> -->
+{% endblock %}
+
+<!-- create the login form -->
+{% block content %}
+    {% if error %}
+        <div class="alert alert-danger" role="alert"><strong>Error:</strong> {{ error }}</div>
+    {% endif %}
+    <!-- Login Area -->
+    <div class="container-fluid full-height">
+        <div class="row vertical-center">
+            <!-- Responsive column sizing -->
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 col-centered">
+                <!-- Login card container -->
+                <div class="login-card">
+                    <h1 class="text-center mb-4">Internal Login</h1>
+                    
+                    <div class="login-form">
+                        <form action="{{ url_for('auth.login') }}" method="POST">
+                            <!-- Email field -->
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" 
+                                    class="form-control" 
+                                    id="email"
+                                    name="email" 
+                                    required>
+                            </div>
+                            
+                            <!-- Password field -->
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" 
+                                    class="form-control" 
+                                    id="password"
+                                    name="password" 
+                                    required>
+                            </div>
+                            
+                            <!-- Submit button -->
+                            <button type="submit" 
+                                    class="btn btn-dark btn-block" 
+                                    name="submit"
+                                    style="background-color: black;"
+                                    >Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
