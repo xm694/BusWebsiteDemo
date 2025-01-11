@@ -46,32 +46,7 @@ Use this credential pair for demo log in:
 
 # Directory tree
 ![dirTree](static/dirTree.png)
-PremierDemo/
-├── static/
-│   ├── hero.png
-│   ├── register.jpeg
-│   └── style.css
-├── task_data/
-│   ├── queries.py
-│   ├── reconstruct.sql
-│   ├── rd_otr_at_mid_stop.sql
-│   ├── rd_otr_at_nominated_end_stop.sql
-│   └── rd_otr_at_nominated_first_stop.sql
-├── templates/
-│   ├── auth/
-│   │   └── login.html
-│   ├── base.html
-│   ├── contact.html
-│   └── home.html
-├── util/
-│   ├── dash/
-│   │   └── dashboard.py
-│   ├── auth.py
-│   ├── busStop.py
-│   └── db.py
-├── main.py
-├── README.md
-└── requirements.txt
+
 
 ```
 # Approach Explanation
