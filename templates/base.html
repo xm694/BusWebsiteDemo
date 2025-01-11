@@ -42,14 +42,19 @@
 
   <!-- error alert! -->
   {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul class=flashes>
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
   {% endwith %}
+  {% if error_message %}
+    <div class="alert alert-danger">
+      {{ error_message }}
+    </div>
+  {% endif %}
 
   <!-- main content -->
   <div class="container">

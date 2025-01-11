@@ -9,7 +9,7 @@
 
 # Usage {#1}
 ## Prerequisites
-This project runs on `python`, run the following code to set up your python virtual environment. (If running on windows OS, use `python` and `pip` to do so.)
+This project is built with Python. Use the following commands to set up a virtual environment. (For Windows OS, replace `python3` and `pip3` with `python` and `pip`.)
 > python3 -m venv venv
 > source venv/bin/activate
 > pip3 install -r requirements.txt
@@ -24,6 +24,9 @@ Here are the required ones:
 > DB_HOST = 
 > SECRET_KEY= (you can use any make up string, or simply use 'dev')
 
+## Set up database
+To ensure the project retrieves data correctly, please update the database by executing the `reconstruct.sql` file.
+
 ## Run the porject
 Run this command and the web app should run at local host 5000.
 > flask --app main run
@@ -31,9 +34,7 @@ Run this command and the web app should run at local host 5000.
 
 
 # Directory tree {#2}
-
 ![dirTree](static/dirTree.png)
-```
 PremierDemo/
 ├── static/
 │   ├── hero.png

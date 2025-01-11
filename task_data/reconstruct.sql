@@ -11,18 +11,19 @@ VALUES
 ('john_doe1', 'john.doe1@example.com','$2y$10$gLaIRSGf8rzEPoSYmGYNs.EdWOQEf8IuiUM89szeUPRtUYXTf5CvG');
 
 /*create optimised data table busRoute for user searching purpose*/
+/*create optimised table for user query*/
 CREATE TABLE busRoute (
-    route VARCHAR(50) NOT NULL,
-    route_type VARCHAR(10),
+    route text DEFAULT NULL,
+    route_type text DEFAULT NULL,
     start_stop_TSN bigint(20) DEFAULT NULL,
-    start_stop VARCHAR(50) NOT NULL,
+    start_stop text DEFAULT NULL,
     mid_stop_TSN bigint(20) DEFAULT NULL,
-    mid_stop VARCHAR(50),
+    mid_stop text DEFAULT NULL,
     end_stop_TSN bigint(20) DEFAULT NULL,
-    end_stop VARCHAR(50) NOT NULL,
+    end_stop text DEFAULT NULL,
     earliest_start_time text DEFAULT NULL,
     latest_start_time text DEFAULT NULL,
-    operator VARCHAR(50)
+    operator text DEFAULT NULL
 );
 
 /* If use mariadb */
@@ -59,7 +60,11 @@ LEFT JOIN PremierDemo.rd_otr_at_nominated_end_stop end ON start.trip_id = end.tr
 GROUP BY 
     COALESCE(start.Route, mid.Route, end.Route),
     start.TSN,
-    start.TSN_Description;
+    start.TSN_Description,
+    mid.TSN,
+    mid.TSN_Description,
+    end.TSN,
+    end.TSN_Description;
 
 /* IF USE SQL SERVER, full outer join can include null cases in data records */
 /* populate data from raw data using sql server */
@@ -94,4 +99,8 @@ FULL OUTER JOIN PremierDemo.rd_otr_at_nominated_end_stop end ON COALESCE(start.t
 GROUP BY 
     COALESCE(start.Route, mid.Route, end.Route),
     start.TSN,
-    start.TSN_Description;
+    start.TSN_Description,
+    mid.TSN,
+    mid.TSN_Description,
+    end.TSN,
+    end.TSN_Description;

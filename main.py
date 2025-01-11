@@ -10,6 +10,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY','dev')
 CORS(app)
 dashboard.create_dash(app)
+app.debug=True
 
 # register blueprints
 app.register_blueprint(auth.au_bp)
