@@ -48,16 +48,15 @@ Use this credential pair for demo log in:
 ![dirTree](static/dirTree.png)
 
 
-```
 # Approach Explanation
 I develop the web application based on two scenarios assumption.
 ### User story one: General public user (Amy)
 > Amy is a student living in the Illawarra area who relies on public transport to get around. She wants to check the general information for a bus route at a specific stop, including the earliest and latest buses she can catch and the route details (start, mid, and end stops).
 #### Front end
 To fulfill Amy’s needs (and for most general public users), I designed the homepage to focus on a stop search feature. Users can enter a stop name, and the web app will display a list of relevant routes (regular only) with key information, such as:
-	•	Earliest and latest start times for the route
-	•	Start, mid, and end stops of the route
-	•	The bus operator responsible for the route
+•	Earliest and latest start times for the route
+•	Start, mid, and end stops of the route
+•	The bus operator responsible for the route
 This search feature is deisgned to handle partial matches so that users can still retrieve results even if they don't remember the full stop name.
 
 #### Backend and database
