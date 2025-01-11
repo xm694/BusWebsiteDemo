@@ -60,9 +60,9 @@ To fulfill Amy’s needs (and for most general public users), I designed the hom
 This search feature is deisgned to handle partial matches so that users can still retrieve results even if they don't remember the full stop name.
 
 #### Backend and database
-To optimize query performance and enhance user experience, I created a custom table (busRoute) that stores only relevant and frequently queried data. This improves response time by reducing the need to join large tables during user queries.
+To optimize query performance and enhance user experience, I created a custom table **(busRoute)** that stores only relevant and frequently queried data. This improves response time by reducing the need to join large tables during user queries.
 
-Additionally, I implemented a fuzzy search mechanism by using LOWER() and REPLACE() functions in SQL queries. This ensures users can perform case-insensitive and whitespace-tolerant searches, making the application more user-friendly. 
+Additionally, I implemented a fuzzy search mechanism by using `LOWER()` and `REPLACE()` functions in SQL queries. This ensures users can perform case-insensitive and whitespace-tolerant searches, making the application more user-friendly. 
 
 
 ### User story two: Internal staff user (Bob)
