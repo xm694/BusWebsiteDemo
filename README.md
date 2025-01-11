@@ -1,7 +1,7 @@
 **This is a full-stack project demo for Premier**
 # Table of contents
 1. [Usage](#Usage)
-2. [Directory tree](#Directory)
+2. [Directory tree](#Directory tree)
 3. [Approach Explanation](#Approach)
 4. [Tech stack](#Tech)
 5. [Project Constrain](#Project)
