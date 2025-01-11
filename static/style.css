@@ -201,7 +201,47 @@ h3 {
 .jumbotron {
     background-image: url("hero.png");
     background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
   }
+
+  .jumbotron .container {
+    position: relative; /* Add this to ensure text appears on top */
+    z-index: 1; /* Add this to ensure text appears on top */ 
+}
+
+.hero-content {
+    left: 200px;  /* Adjust this value to position the text where you want */
+    max-width: 500px;
+    color: #333; /* Adjust text color as needed */
+}
+
+.hero-content h4 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* .learn-more {
+    background-color: #5bc0de;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.learn-more:hover {
+    background-color: #46b8da;
+} */
 
 /* style for carousel */
 .carousel-control.right, .carousel-control.left {

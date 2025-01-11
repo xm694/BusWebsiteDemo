@@ -8,9 +8,30 @@
 6. [Future development](#6)
 
 # Usage {#1}
+## Prerequisites
+This project runs on `python`, run the following code to set up your python virtual environment. (If running on windows OS, use `python` and `pip` to do so.)
+> python3 -m venv venv
+> source venv/bin/activate
+> pip3 install -r requirements.txt
+
+## Environmen variables
+If you are running this project locally, create a `.env` file at the root for these variables. Your host provider should included a feature to set them there directly to avoid exposing them.
+
+Here are the required ones:
+> DB_NAME = 
+> DB_USER = 
+> DB_PASSWORD = 
+> DB_HOST = 
+> SECRET_KEY= (you can use any make up string, or simply use 'dev')
+
+## Run the porject
+Run this command and the web app should run at local host 5000.
+> flask --app main run
+
 
 
 # Directory tree {#2}
+![dirTree](dirTree.png)
 PremierDemo/
 ├── static/
 │   ├── hero.png
@@ -68,9 +89,9 @@ The dashboard is protected by a login system to ensure that only authorized user
 
 # Tech Stacks {#4}
 The project utilises the following technologies:
-	•	Frontend: HTML, CSS, JavaScript (or relevant framework)
-	•	Backend: Python (Flask/FastAPI), SQLAlchemy
-	•	Database: MariaDB
+	•	Frontend: HTML, CSS, JavaScript, Dash, Bootstrap
+	•	Backend: Python Flask, SQLAlchemy, Pandas
+	•	Database: MariaDB, SQL
 
 
 # Project Constrain {#5}

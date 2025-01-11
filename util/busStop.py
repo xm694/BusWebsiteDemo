@@ -25,7 +25,3 @@ def search():
             return render_template('home.html', stop_info = stop_info)
         
         
-# # function to generate analysis report
-# @st_bp.route('/report', methods=('GET', 'POST'))
-# def generate_report():
-#       return "Here is report!"
