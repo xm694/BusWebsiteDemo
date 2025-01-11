@@ -4,3 +4,4 @@ analysis.ipynb
 venv/
 .env
 **/__pycache__/ 
+run_sql.py

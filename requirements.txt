@@ -8,3 +8,5 @@ pandas
 plotly-express
 dash-bootstrap-components
 mysql-connector-python
+setuptools
+pymysql

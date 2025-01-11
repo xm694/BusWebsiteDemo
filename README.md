@@ -31,7 +31,9 @@ Run this command and the web app should run at local host 5000.
 
 
 # Directory tree {#2}
-![dirTree](dirTree.png)
+
+![dirTree](static/dirTree.png)
+```
 PremierDemo/
 ├── static/
 │   ├── hero.png
@@ -59,7 +61,7 @@ PremierDemo/
 ├── README.md
 └── requirements.txt
 
-
+```
 # Approach Explanation {#3}
 I develop the web application based on two scenarios assumption.
 ### User story one: General public user (Amy)
