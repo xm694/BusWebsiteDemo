@@ -1,5 +1,6 @@
 /* create users for authorisation purpose*/
 CREATE TABLE staff (
+    id serial PRIMARY KEY NOT NULL,
 	username text NOT NULL,
 	email text NOT NULL,
 	password text NOT NULL
@@ -64,7 +65,8 @@ GROUP BY
     mid.TSN,
     mid.TSN_Description,
     end.TSN,
-    end.TSN_Description;
+    end.TSN_Description,
+    COALESCE(start.Operator, mid.Operator, end.Operator);
 
 /* IF USE SQL SERVER, full outer join can include null cases in data records */
 /* populate data from raw data using sql server */

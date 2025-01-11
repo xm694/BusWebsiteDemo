@@ -2,6 +2,7 @@ import functools
 from passlib.hash import pbkdf2_sha256
 from flask import (Blueprint, flash, g, redirect, render_template, request, session, url_for)
 from sqlalchemy import text
+from sqlalchemy.exc import SQLAlchemyError, OperationalError
 
 from .db import engine
 
@@ -14,34 +15,48 @@ sqlengine = engine()
 #create the login view for old user
 @au_bp.route('/login', methods=('GET', 'POST'))
 def login():
+    error = None
+    error_message = None
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        print(password)
 
         db = sqlengine.connect()
-        error = None
-        user = db.execute(
-            text('SELECT * FROM staff WHERE email = :email'), {"email":email}
-        ).fetchone()
+        try: 
+            user = db.execute(
+                text('SELECT * FROM staff WHERE email = :email'), {"email":email}
+            ).fetchone()
 
-        user = dict(user._mapping) #convert result to dictionary
+            print(" result is : ", user)
+            if not user:
+                error = 'Incorrect username.'
+            else:
+                user = dict(user._mapping) #convert result to dictionary
+                if not pbkdf2_sha256.verify(password, user['password']):
+                    # if not user['password'] == password:
+                    error = 'Incorrect password.'
+
+            if error is None:
+                session.clear()
+                session['user_id'] = user['id']
+                return redirect(url_for('home'))
+            
+        except OperationalError as e:
+                # Issues related to the database engine (e.g., timeout, unreachable server)
+                error_message = "Internal error." 
+        except SQLAlchemyError as e:
+                # Catch all other SQLAlchemy errors
+                error_message = "An error occurred while processing your request." 
+        except Exception as e:
+                # For catching any other exceptions that are not database-related
+                error_message = "Credential is incorrect!" 
+
+        
+        #debug
         print(f"here is user info: {user}")
-        if user is None:
-            error = 'Incorrect username.'
-        else:
-            if not pbkdf2_sha256.verify(password, user['password']):
-            # if not user['password'] == password:
-                error = 'Incorrect password.'
+        # flash(error)
 
-        if error is None:
-            session.clear()
-            session['user_id'] = user['id']
-            return redirect(url_for('home'))
-
-        flash(error)
-
-    return render_template('auth/login.html')
+    return render_template('auth/login.html', error=error, error_message=error_message)
 
 #function to keep user login info in session
 @au_bp.before_app_request

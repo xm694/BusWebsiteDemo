@@ -2,7 +2,7 @@ import functools
 from flask import (Blueprint, flash, g, redirect, render_template, request, session, url_for)
 from .auth import login_required
 from sqlalchemy import text
-from sqlalchemy.exc import SQLAlchemyError, IntegrityError, OperationalError
+from sqlalchemy.exc import SQLAlchemyError, OperationalError
 
 
 from .db import engine

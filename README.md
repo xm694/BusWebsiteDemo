@@ -26,10 +26,16 @@ Here are the required ones:
 
 ## Set up database
 To ensure the project retrieves data correctly, please update the database by executing the `reconstruct.sql` file.
+The demo database name is **"PremierDemo"**, if you're using different name, please modify the sql query.
 
 ## Run the porject
 Run this command and the web app should run at local host 5000.
 > flask --app main run
+
+## Credential for log in
+Use this credential pair for demo log in:
+> email: admin01@example.com
+> pasword: admin1234
 
 
 

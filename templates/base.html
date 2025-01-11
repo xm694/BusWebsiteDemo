@@ -41,7 +41,7 @@
   </nav>
 
   <!-- error alert! -->
-  {% with messages = get_flashed_messages() %}
+  <!-- {% with messages = get_flashed_messages() %}
     {% if messages %}
       <ul class=flashes>
       {% for message in messages %}
@@ -49,7 +49,7 @@
       {% endfor %}
       </ul>
     {% endif %}
-  {% endwith %}
+  {% endwith %} -->
   {% if error_message %}
     <div class="alert alert-danger">
       {{ error_message }}
