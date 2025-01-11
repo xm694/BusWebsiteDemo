@@ -14,7 +14,7 @@ body {
     color: #EFF3EA;
   }
 
-  h2 {
+h2 {
     font-size: 24px;
     text-align: center;
     text-transform: uppercase;
@@ -23,6 +23,12 @@ body {
     margin-bottom: 30px;
     margin-top: 60px;
   }
+
+h3 {
+    color:#123524;
+}
+
+
   /* navbar style */
   .navbar {
     min-height: 60px;
@@ -131,16 +137,6 @@ body {
         padding-top: 50px;  /* Smaller padding on mobile */
     }
 }
-
-/* .registrationForm {
-    font-size: 13px;
-    margin-top: -15px;
-    background-color: #AAB99A;
-    color: blue;
-    text-decoration: underline;
-    text-align: center;
-    cursor: pointer;
-} */
 
 
 /* style for search box */
@@ -280,4 +276,36 @@ footer {
 .table-header {
     text-transform: uppercase;
     font-weight: bold;
+}
+
+/* style for contact page */
+#contact{
+    background-color:#f1f1f1;
+    font-family: 'Roboto', sans-serif;
+}
+
+#contact .well{
+    margin-top:30px;
+    border-radius:0;
+}
+
+#contact .form-control{
+    border-radius: 0;
+    border:2px solid #1e1e1e;
+}
+
+#contact button{
+    border-radius:0;
+    border:2px solid #1e1e1e;
+}
+
+#contact .row{
+    margin-bottom:30px;
+}
+
+@media (max-width: 768px) { 
+    #contact iframe {
+        margin-bottom: 15px;
+    }
+    
 }

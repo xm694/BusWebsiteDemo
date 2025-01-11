@@ -25,7 +25,6 @@ CREATE TABLE busRoute (
     operator VARCHAR(50)
 );
 
-
 /* If use mariadb */
 /* Mariadb server cannot perform full outer join, hence used left join*/
 /* Populate busRoute from raw data using Mariadb*/

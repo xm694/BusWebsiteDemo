@@ -1,10 +1,7 @@
 from dash import Dash, html, dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
-import plotly.express as px
-import plotly.graph_objects as go
 import pandas as pd
-import mysql.connector
 from datetime import datetime, timedelta
 import os
 from dotenv import load_dotenv
@@ -72,6 +69,13 @@ def create_dash(flask_server):
     dash_app = Dash(server= flask_server, name="Dashboard", url_base_pathname="/dash/", external_stylesheets=external_stylesheets)
 
     dash_app.layout = dbc.Container([
+        # Header
+        dbc.Row([
+            dbc.NavbarSimple(
+                dbc.NavItem(dbc.NavLink("Go Back", href="/",external_link=True)),brand="Operation Dashboard",color="dark"
+            )
+        ]),
+
         dbc.Row([
             html.H1("Bus Operation Perfomance Metrics", className="text-center text-success mb-4")
         ], style={"margin-top":"60px", "text-color":"#303030"}),
@@ -97,7 +101,7 @@ def create_dash(flask_server):
         dbc.Row([
             dbc.Col(dbc.Card([
                 dbc.CardBody([
-                    html.H4("On-Time Rate", className="card-title"),
+                    html.H4("Overall On-Time Rate", className="card-title"),
                     html.H2(id="overall_on_time", className="text-success")
                 ])
             ]), width=4),

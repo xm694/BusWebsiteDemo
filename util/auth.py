@@ -41,7 +41,7 @@ def login():
 
         # flash(error)
 
-    return render_template('auth/login.html', error=error)
+    return render_template('auth/login.html')
 
 #function to keep user login info in session
 @au_bp.before_app_request
