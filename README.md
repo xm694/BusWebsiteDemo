@@ -1,17 +1,19 @@
 **This is a full-stack project demo for Premier**
 # Table of contents
-1. [Usage](#1)
-2. [Directory tree](#2)
-3. [Approach Explanation](#3)
-4. [Tech stack](#4)
-5. [Project Constrain](#5)
-6. [Future development](#6)
+1. [Usage](#Usage)
+2. [Directory tree](#Directory)
+3. [Approach Explanation](#Approach)
+4. [Tech stack](#Tech)
+5. [Project Constrain](#Project)
+6. [Future development](#Future)
 
-# Usage {#1}
+# Usage
 ## Prerequisites
 This project is built with Python. Use the following commands to set up a virtual environment. (For Windows OS, replace `python3` and `pip3` with `python` and `pip`.)
 > python3 -m venv venv
+>
 > source venv/bin/activate
+>
 > pip3 install -r requirements.txt
 
 ## Environmen variables
@@ -19,9 +21,13 @@ If you are running this project locally, create a `.env` file at the root for th
 
 Here are the required ones:
 > DB_NAME = 
+>
 > DB_USER = 
+>
 > DB_PASSWORD = 
+>
 > DB_HOST = 
+>
 > SECRET_KEY= (you can use any make up string, or simply use 'dev')
 
 ## Set up database
@@ -35,11 +41,10 @@ Run this command and the web app should run at local host 5000.
 ## Credential for log in
 Use this credential pair for demo log in:
 > email: admin01@example.com
+>
 > pasword: admin1234
 
-
-
-# Directory tree {#2}
+# Directory tree
 ![dirTree](static/dirTree.png)
 PremierDemo/
 ├── static/
@@ -69,7 +74,7 @@ PremierDemo/
 └── requirements.txt
 
 ```
-# Approach Explanation {#3}
+# Approach Explanation
 I develop the web application based on two scenarios assumption.
 ### User story one: General public user (Amy)
 > Amy is a student living in the Illawarra area who relies on public transport to get around. She wants to check the general information for a bus route at a specific stop, including the earliest and latest buses she can catch and the route details (start, mid, and end stops).
@@ -96,14 +101,14 @@ To meet Bob’s requirements, I built a secure dashboard page that displays key 
 The dashboard is protected by a login system to ensure that only authorized users (e.g., Premier staff) can access sensitive operational data.
 
 
-# Tech Stacks {#4}
+# Tech Stacks
 The project utilises the following technologies:
 	•	Frontend: HTML, CSS, JavaScript, Dash, Bootstrap
 	•	Backend: Python Flask, SQLAlchemy, Pandas
 	•	Database: MariaDB, SQL
 
 
-# Project Constrain {#5}
+# Project Constrain
 1. **Database constrain:** Due to limitations with my personal device, I used MariaDB instead of SQL Server. However, all queries are compatible with standard SQL, and a version of the queries for SQL Server is also included in the project files.
 2. **Business understanding constrain:** Some data columns and business rules are based on personal assumptions and may not fully align with real-world operations at Premier. Further input from business stakeholders would be needed to fine-tune the data structure and metrics.
 3. **Time and creativity constrain:** The frontend design is currently minimalist due to time constraints. With more time, I would improve the UI/UX by adding:
@@ -111,7 +116,7 @@ The project utilises the following technologies:
 	•	User-friendly data filters and search suggestions
 
 
-# Future Development {#6}
+# Future Development
 1. **Database optimisation:** The current database could be restructured to use more atomic schemas (e.g., separating route, stop, and trip data into normalized tables). This would enhance data processing efficiency and make it easier to scale.
 2. **Advanced search features:** 	
     •	Implement autocomplete suggestions for the stop search feature to improve user experience.
