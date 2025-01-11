@@ -54,9 +54,9 @@ I develop the web application based on two scenarios assumption.
 > Amy is a student living in the Illawarra area who relies on public transport to get around. She wants to check the general information for a bus route at a specific stop, including the earliest and latest buses she can catch and the route details (start, mid, and end stops).
 #### Front end
 To fulfill Amy’s needs (and for most general public users), I designed the homepage to focus on a stop search feature. Users can enter a stop name, and the web app will display a list of relevant routes (regular only) with key information, such as:
-•	Earliest and latest start times for the route
-•	Start, mid, and end stops of the route
-•	The bus operator responsible for the route
+- Earliest and latest start times for the route
+- Start, mid, and end stops of the route
+- The bus operator responsible for the route
 This search feature is deisgned to handle partial matches so that users can still retrieve results even if they don't remember the full stop name.
 
 #### Backend and database
@@ -68,34 +68,34 @@ Additionally, I implemented a fuzzy search mechanism by using `LOWER()` and `REP
 ### User story two: Internal staff user (Bob)
 > Bob is a staff member at Premier, responsible for monitoring the performance of bus operations. He wants to access operational performance metrics through the web application.
 To meet Bob’s requirements, I built a secure dashboard page that displays key performance metrics, including:
-	•	Overall on-time rate
-	•	Total trips completed
-	•	Average delay times
+- Overall on-time rate
+- Total trips completed
+- Average delay times
 
 The dashboard is protected by a login system to ensure that only authorized users (e.g., Premier staff) can access sensitive operational data.
 
 
 # Tech Stacks
 The project utilises the following technologies:
-	•	Frontend: HTML, CSS, JavaScript, Dash, Bootstrap
-	•	Backend: Python Flask, SQLAlchemy, Pandas
-	•	Database: MariaDB, SQL
+- Frontend: HTML, CSS, JavaScript, Dash, Bootstrap
+- Backend: Python Flask, SQLAlchemy, Pandas
+- Database: MariaDB, SQL
 
 
 # Project Constrain
 1. **Database constrain:** Due to limitations with my personal device, I used MariaDB instead of SQL Server. However, all queries are compatible with standard SQL, and a version of the queries for SQL Server is also included in the project files.
 2. **Business understanding constrain:** Some data columns and business rules are based on personal assumptions and may not fully align with real-world operations at Premier. Further input from business stakeholders would be needed to fine-tune the data structure and metrics.
 3. **Time and creativity constrain:** The frontend design is currently minimalist due to time constraints. With more time, I would improve the UI/UX by adding:
-	•	A more visually appealing dashboard
-	•	User-friendly data filters and search suggestions
+- A more visually appealing dashboard
+- User-friendly data filters and search suggestions
 
 
 # Future Development
 1. **Database optimisation:** The current database could be restructured to use more atomic schemas (e.g., separating route, stop, and trip data into normalized tables). This would enhance data processing efficiency and make it easier to scale.
 2. **Advanced search features:** 	
-    •	Implement autocomplete suggestions for the stop search feature to improve user experience.
-	•	Use geolocation-based search to allow users to find stops near their current location.
-	•	Integrate with TransportNSW with trip planner.
+- Implement autocomplete suggestions for the stop search feature to improve user experience.
+- Use geolocation-based search to allow users to find stops near their current location.
+- Integrate with TransportNSW with trip planner.
 3. **Security layer enhancement:** Consider adding role-based access control (RBAC) in future iterations.
 
 
